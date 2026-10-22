@@ -3,6 +3,34 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+  final List<Map<String, dynamic>> menus = const [
+    {
+      'titre': 'Petit déjeuner',
+      'description': 'Lait, céréales et fruits',
+      'icone': '🥣',
+    },
+    {
+      'titre': 'Déjeuner',
+      'description': 'Poulet, riz et légumes',
+      'icone': '🍲',
+    },
+    {
+      'titre': 'Goûter',
+      'description': 'Biscuit et compote de pomme',
+      'icone': '🍪',
+    },
+    {
+      'titre': 'Jus de fruits',
+      'description': 'Jus d’orange naturel',
+      'icone': '🍊',
+    },
+    {
+      'titre': 'Fruits frais',
+      'description': 'Une sélection de fruits de saison',
+      'icone': '🍎',
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +60,7 @@ class HomePage extends StatelessWidget {
         ],
       ),
 
+      // Drawer
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -67,20 +96,54 @@ class HomePage extends StatelessWidget {
         ),
       ),
 
-      body: const Padding(
-        padding: EdgeInsets.all(16),
-        child: Align(
-          alignment: Alignment.topLeft,
-          child: Text(
-            'Menus du jour',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+      // Contenu
+     body: Padding(
+  padding: const EdgeInsets.all(16),
+  child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      const Text(
+        'Menus du jour',
+        style: TextStyle(
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
         ),
       ),
 
+      const SizedBox(height: 16),
+
+      Expanded(
+        child: ListView.builder(
+          itemCount: menus.length,
+          itemBuilder: (context, index) {
+            final menu = menus[index];
+
+            return Card(
+              margin: const EdgeInsets.only(bottom: 12),
+              child: ListTile(
+                leading: Text(
+                  menu['icone'],
+                  style: const TextStyle(fontSize: 35),
+                ),
+                title: Text(
+                  menu['titre'],
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                subtitle: Text(
+                  menu['description'],
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    ],
+  ),
+),
+
+      // Bouton Ajouter
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           ScaffoldMessenger.of(context).showSnackBar(
