@@ -1,11 +1,10 @@
-# Ma Garderie
+# 🌸 Ma Garderie
 
-## Présentation
+## 📌 Présentation
 
-Ma Garderie est une application mobile développée avec Flutter
-pour consulter les menus proposés dans une garderie d'enfants.
+Ma Garderie est une application mobile développée avec Flutter pour consulter les menus proposés dans une garderie d'enfants.
 
-## Fonctionnalités
+## ✨ Fonctionnalités
 
 - Splash Screen
 - Page principale
@@ -16,16 +15,52 @@ pour consulter les menus proposés dans une garderie d'enfants.
 - Ajout d'un menu
 - Sélection d'un menu
 
-## Technologies
+## 🛠️ Technologies utilisées
 
 - Flutter
 - Dart
 - Git
 - GitHub
 
-## Installation
+## 📱 Captures d'écran
 
-Cloner le projet :
+### Splash Screen
+![Splash Screen](screenshots/splash.png)
+
+### Page d'accueil
+![Home Page](screenshots/home.png)
+
+### Drawer de navigation
+![Drawer](screenshots/drawer.png)
+
+### Interaction
+![Interaction](screenshots/interaction.png)
+
+## ⚙️ Installation
+
+**1. Cloner le projet**
 
 ```bash
 git clone https://github.com/roua4605/garderie-mobile-g2.git
+```
+
+**2. Accéder au dossier**
+
+```bash
+cd garderie-mobile-g2
+```
+
+**3. Installer les dépendances**
+
+```bash
+flutter pub get
+```
+
+**4. Lancer l'application**
+
+```bash
+flutter run
+```
+
+## 👩‍💻 Réalisé avec Flutter
+
